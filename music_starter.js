@@ -2,19 +2,19 @@
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
-  background(220);
-  rectMode(CENTER);
-  strokeWeight(9);
-  stroke(247, 84, 236);
+  // background(220);
+  // rectMode(CENTER);
+  // strokeWeight(9);
+  // stroke(247, 84, 236);
 
-  var drumMap = map(drum, 0, 100, 15, 40);
+  // var drumMap = map(drum, 0, 100, 0, 70);
 
-  for(var ii=1; ii <= 1; ii++){ //changes the y position
-    var yStep = ii*50;
-  for (var i = 1; i <= 1; i++) { //changes the x position
-    ellipse(50 * i, yStep, drumMap);
-  }
-  }
+  // for(var ii=1; ii <= 1; ii++){ //changes the y position
+  //   var yStep = ii*50;
+  // for (var i = 1; i <= 1; i++) { //changes the x position
+  //   ellipse(50 * i, yStep, drumMap);
+  // }
+  // }
 
     
   // textFont('Verdana'); // please use CSS safe fonts
