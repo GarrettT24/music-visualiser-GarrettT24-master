@@ -1,44 +1,25 @@
-  
-  let img;
+let firstRun = true
+let img;
 
-// Load the image and create a p5.Image object.
-function preload() {
-   img = loadImage('/assets/2D.jpg');
-  }
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(220);
-  image(img, 0, 0);
+  //background(220)
+  rectMode(CENTER)
+  if (firstRun) { //images
+    img = loadImage('/assets/mugs.jpg'); //mugshots picture
+    firstRun = false
+  }
+  if (drum > 0) {
+  image(img, 0, 0)
+  }
 }
 
-function setup() {
-  createCanvas(300, 300);
 
-  // Draw the image.
-  image(img, 1, 1);
 
-  describe('Image of the underside of a white umbrella and a gridded ceiling.');
-}
-  
-  
-  
-  
-  
-  // background(220);
-  // rectMode(CENTER);
-  // strokeWeight(9);
-  // stroke(247, 84, 236);
 
-  // var drumMap = map(drum, 0, 100, 0, 70);
 
-  // for(var ii=1; ii <= 1; ii++){ //changes the y position
-  //   var yStep = ii*50;
-  // for (var i = 1; i <= 1; i++) { //changes the x position
-  //   ellipse(50 * i, yStep, drumMap);
-  // }
-  // }
 
-    
+
   // textFont('Verdana'); // please use CSS safe fonts
   // rectMode(CENTER)
   // textSize(24);
@@ -77,5 +58,3 @@ function setup() {
   //  textAlign(CENTER);
   //  textSize(vocal);
   //  text(words, width/2, height/3);
-
-}
