@@ -1,6 +1,28 @@
+  
+  let img;
 
+// Load the image and create a p5.Image object.
+function preload() {
+   img = loadImage('/assets/2D.jpg');
+  }
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
+  background(220);
+  image(img, 0, 0);
+}
+
+function setup() {
+  createCanvas(300, 300);
+
+  // Draw the image.
+  image(img, 1, 1);
+
+  describe('Image of the underside of a white umbrella and a gridded ceiling.');
+}
+  
+  
+  
+  
   
   // background(220);
   // rectMode(CENTER);
