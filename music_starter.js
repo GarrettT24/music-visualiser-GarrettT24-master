@@ -1,17 +1,27 @@
 let firstRun = true
 let img;
+let img2;
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  //background(220)
+  background(220)
   rectMode(CENTER)
   if (firstRun) { //images
     img = loadImage('/assets/mugs.jpg'); //mugshots picture
+    img2 = loadImage('/assets/2D.jpg'); //2D picture
     firstRun = false
   }
-  if (drum > 0) {
-  image(img, 0, 0)
-  }
+  //if (drum > 0) {
+  //image(img, 0, 0)
+  //}
+
+if (vocal > 64) {
+image(img2, 0, 0)
+}
+
+if (vocal > 61) {
+rect(0, 0, 1920, 50)
+}
 }
 
 
