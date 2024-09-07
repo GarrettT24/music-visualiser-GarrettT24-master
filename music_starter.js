@@ -1,27 +1,36 @@
 let firstRun = true
 let img;
 let img2;
+background(0)
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(220)
-  rectMode(CENTER)
+  // rectMode(CENTER)
   if (firstRun) { //images
     img = loadImage('/assets/mugs.jpg'); //mugshots picture
-    img2 = loadImage('/assets/2D.jpg'); //2D picture
+    // img2 = loadImage('/assets/2D.jpg'); //2D picture
     firstRun = false
   }
-  //if (drum > 0) {
-  //image(img, 0, 0)
-  //}
+  if (drum > 0) {
+  //image(img, 0, 0, 1024, 768)
+  }
+  let hihat = map(vocal, 0, 100, 0, 10)
 
-if (vocal > 64) {
-image(img2, 0, 0)
+// if (vocal > 8) {
+// image(img2, 0, 0)
+// }
+if (hihat > 6) {
+strokeWeight(0)
+fill(1,25,37)
+  rect(0, 0, 1024, 50);
+} else {
+  strokeWeight(0)
+  rect(0, 50, 1024, 50);
 }
 
-if (vocal > 61) {
-rect(0, 0, 1920, 50)
-}
+// if (hihat > 6) {
+//   rect(0, 50, 1024, 50)
+//   }
 }
 
 

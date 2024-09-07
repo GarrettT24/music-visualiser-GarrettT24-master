@@ -156,7 +156,7 @@ function draw() {
       let now = millis();
       let songOffset = now - songEpoch;
       if(songOffset < 0) {
-        background(0);
+        //background(0);
         let secondsRemaining = songOffset / -1000.0;
         let intSecs = int(secondsRemaining);
         if(intSecs > 0) {
