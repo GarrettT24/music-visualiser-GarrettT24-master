@@ -38,9 +38,9 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   stroke(255);
   rect(0, 0, 1920, 225);//top horizontal
 
-  rect(0, 0, 470, 1080);//left vertical
+  rect(0, 0, 480, 1080);//left vertical
 
-  rect(1410, 0, 470, 1080);//right vertical
+  rect(1440, 0, 480, 1080);//right vertical
 
   push();
   fill(1, 24, 37);
@@ -59,10 +59,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rect(0, 855, 1920, 225);//bottom horizontal
 
 
-
-  
-
-  
 
 
 }
