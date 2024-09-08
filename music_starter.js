@@ -1,79 +1,69 @@
 let firstRun = true
 let img;
 let img2;
-// background(0)
 
+// vocal=bass, drum=snare, bass=kick, other=hihat
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   // rectMode(CENTER)
-  if (firstRun) { //images
-    img = loadImage('/assets/wheel1.png'); //mugshots picture
-    // img2 = loadImage('/assets/2D.jpg'); //2D picture
+  if (firstRun){ //images
+    img = loadImage('/assets/wheel1.png'); //wheel 1
+    img2 = loadImage('/assets/mugs.png'); //mugshots picture
     firstRun = false
   }
-  if (drum > 0) {
-  image(img, 0, 0, 1024, 768)
-  }
-  let hihat = map(vocal, 0, 100, 0, 10)
 
-// if (vocal > 8) {
-// image(img2, 0, 0)
-// }
-// if (hihat > 6) {
-// strokeWeight(0)
-// fill(1,25,37)
-//   rect(0, 0, 1024, 50);
-// } else {
-//   strokeWeight(0)
-//   rect(0, 50, 1024, 50);
-// }
+  // let hihat = map(bass, 0, 100, 0, 10)
 
-// if (hihat > 6) {
-//   rect(0, 50, 1024, 50)
-//   }
+  
+  
+  background(0);
+
+  let hihat = map(other, 0, 80, 0, 360);
+
+  push();
+  translate(960, 540);
+  rotate(hihat);
+  image(img, -960, -540);
+  pop();
+
+  //image(img2, 448, 156)//1024x768 / 2 = 512x384, 1920x1080 / 2 = 960x540
+  
+  fill(0);
+  ellipse(960, 540, 10, 10);
+
+  //port hole = 480*270
+
+  fill(1, 24, 37);
+  strokeWeight(0);
+  stroke(255);
+  rect(0, 0, 1920, 225);//top horizontal
+
+  rect(0, 0, 470, 1080);//left vertical
+
+  rect(1410, 0, 470, 1080);//right vertical
+
+  push();
+  fill(1, 24, 37);
+  strokeWeight(0);
+  stroke(255);
+  rectMode(CENTER)
+  rect(960, 0, 120, 2160);//center vertical
+  
+  fill(1, 24, 37);
+  strokeWeight(0);
+  stroke(255);
+  rectMode(CENTER)
+  rect(0, 540, 3840, 120);//center horizontal
+  pop();
+  
+  rect(0, 855, 1920, 225);//bottom horizontal
+
+
+
+  
+
+  
+
+
 }
 
-
-
-
-
-
-
-  // textFont('Verdana'); // please use CSS safe fonts
-  // rectMode(CENTER)
-  // textSize(24);
-  
-  //  let bar_spacing = height / 10;
-  //  let bar_height = width / 12;
-  //  let bar_pos_x = width / 2;
- 
-
-  //  // vocal bar is red
-  //  fill(200, 0, 0);
-  //  rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-  //  fill(0);
-  //  text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
- 
-  //  // drum bar is green
-  //  fill(0, 200, 0);
-  //  rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-  //  fill(0);
-  //  text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
- 
-  //  // bass bar is blue
-  //  fill(50, 50, 240);
-  //  rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
-  //  fill(0);
-  //  text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
- 
-  //  // other bar is white
-  //  fill(200, 200, 200);
-  //  rect(bar_pos_x, height / 2 + 4 * bar_spacing, 4 * other, bar_height);
-  //  fill(0);
-  //  text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
-  //  fill(255, 255, 0);
- 
-  //  // display "words"
-  //  textAlign(CENTER);
-  //  textSize(vocal);
-  //  text(words, width/2, height/3);
