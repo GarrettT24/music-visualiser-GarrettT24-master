@@ -9,6 +9,7 @@ let img5;
 let mur = [];
 let noo = [];
 let hob = [];
+let twod = [];
 
 // vocal=bass, drum=snare, bass=kick, other=hihat
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
@@ -17,7 +18,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   if (firstRun){ //images
     img1 = loadImage('/assets/mugs.png'); //mugshots picture taken from 'https://static.wikia.nocookie.net/kong/images/a/a1/Gorillaz-dd-768_orig.jpg/'
     img2 = loadImage('/assets/wheel1.png'); //star wheel
-    img3 = loadImage('/assets/strip1.png'); //Russel Hobbs animation taken from 'https://tenor.com/view/gorillaz-russel-hobbes-russel-russel-gorillaz-gorillaz-drummer-gif-19558804'
+    img3 = loadImage('/assets/strip1.png'); //image no longer used
     img4 = loadImage('/assets/bass.png'); //fret board
     img5 = loadImage('/assets/strings.png'); //bass strings
 
@@ -105,7 +106,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     mur.push(loadImage('/assets/mur74.png'));
     mur.push(loadImage('/assets/mur73.png'));
 
-    hob.push(loadImage('/assets/hob1.png'));
+    hob.push(loadImage('/assets/hob1.png')); //Hobbs animation taken from 'https://media.tenor.com/VzqZa6Fpg2oAAAAi/gorillaz-russel-hobbes.gif'
     hob.push(loadImage('/assets/hob2.png'));
     hob.push(loadImage('/assets/hob3.png'));
     hob.push(loadImage('/assets/hob4.png'));
@@ -164,10 +165,33 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     hob.push(loadImage('/assets/hob57.png'));
     hob.push(loadImage('/assets/hob58.png'));
 
+    twod.push(loadImage('/assets/2d1.png')); //2d animation taken from 'https://media.tenor.com/npz_uBxhkBYAAAAi/2d-gorillaz.gif'
+    twod.push(loadImage('/assets/2d2.png'));
+    twod.push(loadImage('/assets/2d3.png'));
+    twod.push(loadImage('/assets/2d4.png'));
+    twod.push(loadImage('/assets/2d5.png'));
+    twod.push(loadImage('/assets/2d6.png'));
+    twod.push(loadImage('/assets/2d7.png'));
+    twod.push(loadImage('/assets/2d8.png'));
+    twod.push(loadImage('/assets/2d9.png'));
+    twod.push(loadImage('/assets/2d10.png'));
+    twod.push(loadImage('/assets/2d11.png'));
+    twod.push(loadImage('/assets/2d12.png'));
+    twod.push(loadImage('/assets/2d13.png'));
+    twod.push(loadImage('/assets/2d14.png'));
+    twod.push(loadImage('/assets/2d15.png'));
+    twod.push(loadImage('/assets/2d16.png'));
+    twod.push(loadImage('/assets/2d17.png'));
+    twod.push(loadImage('/assets/2d18.png'));
+    twod.push(loadImage('/assets/2d19.png'));
+    twod.push(loadImage('/assets/2d20.png'));
+    twod.push(loadImage('/assets/2d21.png'));
+    twod.push(loadImage('/assets/2d22.png'));
+
     firstRun = false
   }
 
-  frameRate(10)
+  frameRate(10);
   
   background(0);
 
@@ -176,7 +200,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   //image(img1, 448, 156)//image notes: reference image is 1024x768 / 2 = 512x384, 1920x1080 / 2 = 960x540
 
   push();
-  scale(0.8)
+  scale(0.8);
   image(img4, 615, 100); //fret board
   pop();
 
@@ -190,19 +214,6 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   push();
   rect(1020, 600, 420, 400);
   pop();
-
-  var vox = int(map(other, 0, 100, 0,74));
-
-  if (counter < 450) {
-  rect(480, 80, 420, 400);
-  }
-  
-  if (counter < 450) { // murdoch laughing
-  push();
-  scale(2);
-  image(mur[vox], 235, 8)
-  pop();
-  }
   
   push();
   fill(0);
@@ -212,25 +223,44 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   let kick = map(bass, 0, 80, 0, 360);
 
   push();
-  scale(0.5)
-  imageMode(CENTER)
+  scale(0.5);
+  imageMode(CENTER);
   translate(800, 2600);
   rotate(kick);
   image(img2, 0, 0);//wheel 1
+  pop();
+
+  push();
+  fill(1, 24, 37);
+  strokeWeight(0);
+  stroke(255);
+  rect(900, 80, 120, 130);
+  pop()
+
+  push();
+  fill(255);
+  rect(1020, 77, 420, 400);
+  pop();
+
+  var vox = int(map(other, 0, 100, 0,22));
+
+  push();
+  scale(0.8)
+  image(twod[vox], 1262, 116)// 2d singing, code borrowed from Phoebe's tutorial "snail sequence" 'https://nuku.wgtn.ac.nz/courses/17233/files/3335656?wrap=1'
   pop();
 
   var hihat = int(map(drum, 0, 100, 0,7));
 
   push();
   scale(1.5);
-  image(noo[hihat], 360, 425)// noodle spinning
+  image(noo[hihat], 360, 425)// noodle spinning, code borrowed from Phoebe's tutorial "snail sequence" 'https://nuku.wgtn.ac.nz/courses/17233/files/3335656?wrap=1'
   pop();
 
   var snare = int(map(drum, 0, 100, 0,58));
 
   push();
   scale(1);
-  image(hob[snare], 990, 577)// Hobbs drumming
+  image(hob[snare], 990, 573)// Hobbs drumming, code borrowed from Phoebe's tutorial "snail sequence" 'https://nuku.wgtn.ac.nz/courses/17233/files/3335656?wrap=1'
   pop();
 
   fill(1, 24, 37);
@@ -247,8 +277,10 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   strokeWeight(0);
   stroke(255);
   rectMode(CENTER);
-  rect(960, 0, 120, 2160);//center vertical
+  rect(960, 1290, 120, 2160);//center vertical
+  pop()
   
+  push()
   fill(1, 24, 37);
   strokeWeight(0);
   stroke(255);
@@ -266,6 +298,28 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
     rect(1020, 600, 420, 400);
     rect(1020, 77, 420, 400);
     }
+
+  var vox = int(map(other, 0, 100, 0,74));
+
+  if (counter < 430) {
+  rect(480, 80, 420, 400);
+  }
+  
+  if (counter < 430) { // murdoch laughing
+  push();
+  scale(2);
+  image(mur[vox], 235, 8)
+  pop();
+  }  
+  
+  if (counter < 450) {  
+    fill(1, 24, 37);
+    strokeWeight(0);
+    stroke(255);
+    rect(900, 80, 120, 130);
+  }
+
+
 
 
 
