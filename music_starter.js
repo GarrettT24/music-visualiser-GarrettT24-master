@@ -203,8 +203,11 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   image(mur[vox], 235, 8)
   pop();
   }
-
-  var hihat = int(map(drum, 0, 100, 0,7));
+  
+  push();
+  fill(0);
+  rect(480, 600, 420, 400);
+  pop();
   
   let kick = map(bass, 0, 80, 0, 360);
 
@@ -215,6 +218,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rotate(kick);
   image(img2, 0, 0);//wheel 1
   pop();
+
+  var hihat = int(map(drum, 0, 100, 0,7));
 
   push();
   scale(1.5);
